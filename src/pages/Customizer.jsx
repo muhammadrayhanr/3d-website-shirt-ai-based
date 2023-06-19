@@ -38,33 +38,33 @@ const Customizer = () => {
     }
   };
 
-  const handleSubmit = async (type) => {
-    if (!prompt) return alert('Please enter a prompt');
+  // const handleSubmit = async (type) => {
+  //   if (!prompt) return alert('Please enter a prompt');
 
-    try {
-      setGeneratingImg(true);
+  //   try {
+  //     setGeneratingImg(true);
 
-      const response = await fetch(import.meta.env.VITE_AI_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
-        body: JSON.stringify({
-          prompt,
-        }),
-      });
+  //     const response = await fetch(import.meta.env.VITE_AI_URL, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Access-Control-Allow-Origin': '*'
+  //       },
+  //       body: JSON.stringify({
+  //         prompt,
+  //       }),
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      handleDecals(type, `data:image/png;base64,${data.photo}`);
-    } catch (error) {
-      alert(error);
-    } finally {
-      setGeneratingImg(false);
-      setActiveEditorTab('');
-    }
-  };
+  //     handleDecals(type, `data:image/png;base64,${data.photo}`);
+  //   } catch (error) {
+  //     alert(error);
+  //   } finally {
+  //     setGeneratingImg(false);
+  //     setActiveEditorTab('');
+  //   }
+  // };
 
   const handleDecals = (type, result) => {
     const decalType = DecalTypes[type];
