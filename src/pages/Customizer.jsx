@@ -48,7 +48,7 @@ const Customizer = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://gold-fancy-bunny.cyclic.app'
+          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
           prompt,
